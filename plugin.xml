@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="it-plugin-ftp"
+        version="20170305">
+  <name>it-plugin-ftp</name>
+  
+  <engines>
+    <engine name="cordova" version=">=4.0.0"/>
+  </engines>
+  
+  <js-module src="www/ftp.js" name="ftp">
+    <clobbers target="ftp"/>
+  </js-module>
+
+  <platform name="android">
+    <config-file target="config.xml" parent="/*">
+      <feature name="ftp">
+        <param name="android-package" value="it.plugin.ftp.ftpLauncher"/>
+      </feature>
+    </config-file>
+    
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    </config-file>    
+    <source-file src="src/android/ftpLauncher.java" target-dir="src/it/plugin/ftp"/>
+    <source-file src="src/android/DAL.java" target-dir="src/it/plugin/ftp"/>
+    <source-file src="src/android/FTPAsync.java" target-dir="src/it/plugin/ftp"/>
+    <source-file src="src/android/APIAsync.java" target-dir="src/it/plugin/ftp"/>
+    <source-file src="src/android/FileAsync.java" target-dir="src/it/plugin/ftp"/>
+    <source-file src="src/android/FTPClass.java" target-dir="src/it/plugin/ftp"/>
+    <source-file src="src/android/SUR_LOC_IN.java" target-dir="src/it/plugin/ftp"/>
+    <source-file src="src/android/SUR_LOC_IN_ERROR.java" target-dir="src/it/plugin/ftp"/>
+    <source-file src="src/android/SUR_LOC_IN_FEE.java" target-dir="src/it/plugin/ftp"/>
+    <source-file src="src/android/SUR_LOC_IN_IMAGES.java" target-dir="src/it/plugin/ftp"/>
+	
+    <lib-file src="libs/android/commons-net-3.3.jar"/>
+    <lib-file src="libs/android/okhttp-3.5.0.jar"/>
+    <lib-file src="libs/android/gson-2.2.4.jar"/>
+  </platform>
+</plugin>

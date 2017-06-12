@@ -1,0 +1,21 @@
+{
+    "author": "FTP Client",
+    "version": "0.1.0",
+    "name": "it.plugin.ftp",
+    "cordova_name": "ftp",
+    "description": "A ftp client to download/upload a file.",
+    "license": "it",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/daoquyen2008/it-plugin-ftp.git"
+    },
+    "issue": "",
+    "keywords": [
+        "cordova"
+    ],
+    "platforms": [
+        "android"
+    ],
+    "engines": {},
+    "englishdoc": ""
+}
